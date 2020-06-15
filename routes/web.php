@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/todos', 'TodoController@index');
 Route::get('/todos/create', 'TodoController@create');
-Route::get('/todos/edit', 'TodoController@edit');
+Route::get('/todos/{id}/edit', 'TodoController@edit');
 Route::post('/todos/create', 'TodoController@store');
 
 

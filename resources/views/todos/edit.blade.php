@@ -1,1 +1,5 @@
-Edit Todo List
+@extends('todos.layout')
+
+@section('content')
+    {{$todo->title}}    
+@endsection

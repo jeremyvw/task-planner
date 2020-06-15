@@ -27,8 +27,9 @@ class TodoController extends Controller
         return redirect()->back()->with('message', 'Todo created successfully.');
     }
 
-    public function edit()
+    public function edit($id)
     {
-        return view('todos.edit');
+        $todo = Todo::find($id);
+        return view('todos.edit', compact('todo'));
     }
 }
