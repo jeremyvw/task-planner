@@ -1,7 +1,7 @@
 @extends('todos.layout')
 
 @section('content')
-    <h1 class="text-2xl">Update this todo list</h1>
+    <h1 class="text-2xl border-b pb-4">Update this todo list</h1>
     <h2>{{$todo->title}}</h2>    
     <x-alert />
     <form method="POST" action="{{route('todo.update', $todo->id)}}" class="py-5">
