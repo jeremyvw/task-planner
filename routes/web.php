@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/todos', 'TodoController@index');
+Route::get('/todos', 'TodoController@index')->name('todo.index');
 Route::get('/todos/create', 'TodoController@create');
-Route::get('/todos/{id}/edit', 'TodoController@edit');
 Route::post('/todos/create', 'TodoController@store');
-
+Route::get('/todos/{id}/edit', 'TodoController@edit');
+Route::patch('/todos/{id}/update', 'TodoController@update')->name('todo.update');
 
 Route::get('/', function () {
     return view('welcome');
