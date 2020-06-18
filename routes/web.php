@@ -22,6 +22,8 @@ Route::get('/todos/{id}/edit', 'TodoController@edit');
 Route::patch('/todos/{id}/update', 'TodoController@update')->name('todo.update');
 Route::put('/todos/{id}/complete', 'TodoController@complete')->name('todo.complete');
 Route::delete('todos/{id}/incomplete', 'TodoController@incomplete')->name('todo.incomplete');
+Route::delete('todos/{id}/delete', 'TodoController@delete')->name('todo.delete');
+
 
 Route::get('/', function () {
     return view('welcome');
