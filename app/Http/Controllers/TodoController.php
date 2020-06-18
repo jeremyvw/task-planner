@@ -33,9 +33,9 @@ class TodoController extends Controller
         return view('todos.edit', compact('todo'));
     }
 
-    public function update(TodoCreateRequest $request, Todo $id)
+    public function update(TodoCreateRequest $request, Todo $todo)
     {
-        $id->update(['title' => $request->title]);
+        $todo->update(['title' => $request->title]);
         return redirect(route('todo.index'))->with('message', 'Updated');
     }
 
@@ -51,9 +51,9 @@ class TodoController extends Controller
         return redirect()->back()->with('message', 'Task marked as incompleted');
     }
 
-    public function delete(Todo $id)
+    public function destroy(Todo $todo)
     {
-        $id->delete();
+        $todo->delete();
         return redirect()->back()->with('message', 'Task successfully deleted.');
     }
 }
