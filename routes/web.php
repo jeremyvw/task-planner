@@ -15,14 +15,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/todos', 'TodoController@index')->name('todo.index');
-Route::get('/todos/create', 'TodoController@create');
-Route::post('/todos/create', 'TodoController@store');
-Route::get('/todos/{id}/edit', 'TodoController@edit');
-Route::patch('/todos/{id}/update', 'TodoController@update')->name('todo.update');
-Route::put('/todos/{id}/complete', 'TodoController@complete')->name('todo.complete');
-Route::delete('todos/{id}/incomplete', 'TodoController@incomplete')->name('todo.incomplete');
-Route::delete('todos/{id}/delete', 'TodoController@delete')->name('todo.delete');
+Route::resource('/todo', 'TodoController');
+Route::put('/todo/{id}/complete', 'TodoController@complete')->name('todo.complete');
+Route::delete('todo/{id}/incomplete', 'TodoController@incomplete')->name('todo.incomplete');
 
 
 Route::get('/', function () {
