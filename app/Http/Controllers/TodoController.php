@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Validator;
 use App\Todo;
 class TodoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $todos = Todo::orderBy('completed')->get();
@@ -23,6 +28,8 @@ class TodoController extends Controller
 
     public function store(TodoCreateRequest $request)
     {
+        $userId = auth()->id();
+        $request['user_id'] = $userId;
         Todo::create($request->all());
         return redirect()->back()->with('message', 'Todo created successfully.');
     }
