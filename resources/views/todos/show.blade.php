@@ -14,7 +14,7 @@
         <div class="py-4">
             <h3 class="text-lg">Steps for this task</h3>
             @foreach ($todo->steps as $step)
-                {{$step->name}}
+               <p>{{$step->name}}</p>
             @endforeach
         </div>
         @endif
